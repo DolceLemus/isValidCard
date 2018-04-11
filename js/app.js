@@ -4,9 +4,11 @@ var input = prompt("Ingresa los 16 digitos de tu tarjeta \n ***No debes ingresar
 
 //****Validacion del input
 
-while (input === null || input.length === 0 || isNaN(input) ) {
-  input = prompt("Ingresa los 16 digitos de tu tarjeta \n **Recuerda que no debes ingresar espacios(\" \"), letras(abC) o caracteres extranios (&%$)");
-}
+  for (var j = 0; j < input.length; j++){
+    while(input[j] === " " || input === null || input.length === 0 || isNaN(input) || input. length !== 16 ){
+       input = prompt("Ingresa los 16 digitos de tu tarjeta \n **Recuerda que no debes ingresar espacios(\" \"), letras(abC) o caracteres extranios (&%$)");
+    }
+  }
 
 //****Validacion de la tarjeta
 function isValidCard (input){
