@@ -1,4 +1,3 @@
-//var test = alert("hola!");
 //Input del usuario
 var input = prompt("Ingresa los 16 digitos de tu tarjeta \n ***No debes ingresar espacios(\" \"), letras(abC) o caracteres extranios (&%$)");
 
@@ -18,30 +17,31 @@ function isValidCard (input){
   var arrayInput = strInput.split("");
   //volteamos nuestro array
   var invArrayInput= arrayInput.reverse();
-  invArrayInput.unshift('s');//consit
 
-  var result = 0;
+  var result ;
+
+  invArrayInput.unshift('s');//consit
 
     for (var i = 1; i<invArrayInput.length; i++){
       var imparIndInput = 0;
       var pairIndResInput = 0;
       var pairIndInput = 0;
 
-       result=imparIndInput + pairIndResInput + pairIndInput;
-
         if(i % 2 !== 0){
             result += invArrayInput[i];
         }
         else if(i % 2 === 0){
-            if(invArrayInput[i]*2>10){
-                (invArrayInput[i]-10)+1;
+            if(invArrayInput[i] * 2 > 10){
+                (invArrayInput[i] - 10) + 1;
                 pairIndResInput += invArrayInput[i];
             }
             else {
                 pairIndInput += (invArrayInput[i] * 2);
             }
         }
+      result=imparIndInput + pairIndResInput + pairIndInput;
     }
+
   if(result % 10 === 0){
       alert("Valida");
   }
